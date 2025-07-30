@@ -1,0 +1,23 @@
+name: 🧠 Auto Evaluate Go/No-Go Submission
+
+on:
+  push:
+    paths:
+      - 'submissions/*.md'
+
+jobs:
+  check-submission:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: List New Submission(s)
+        run: |
+          echo "New or updated submission(s) detected in the 'submissions/' folder:"
+          ls submissions/*.md
+
+      - name: Placeholder Evaluation Step
+        run: |
+          echo " This is where you will run evaluation logic or scripts later."
